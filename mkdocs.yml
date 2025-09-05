@@ -1,0 +1,115 @@
+site_name: Documentação do Sistema Lazarus
+site_url: https://lazarus-docs.example.com/
+site_author: Lazarus Team
+site_description: >-
+  Documentação completa do sistema de microsserviços Lazarus, um sistema
+  médico inteligente de última geração.
+
+# Repositório
+repo_name: lazarus-project/lazarus
+repo_url: https://github.com/lazarus-project/lazarus
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024 Lazarus Systems
+
+docs_dir: docs/
+
+# Configuração do Tema
+theme:
+  name: material
+  language: pt
+  logo: assets/lazarus-logo.png
+  favicon: assets/favicon.ico
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.tooltips
+    - toc.integrate
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+
+# Extensões
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+  - awesome-pages
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: true
+
+# Conteúdo Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lazarus-project
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/lazarus
+
+# Estrutura da Navegação
+nav:
+  - Início: index.md
+  - Arquitetura:
+    - Visão Geral: architecture/overview.md
+    - Microsserviços: architecture/microservices.md
+    - Padrões de Projeto: architecture/patterns.md
+    - Diagramas: architecture/diagrams.md
+  - Guias de Desenvolvimento:
+    - Ambiente de Desenvolvimento: guides/dev-environment.md
+    - Padrões de Código: guides/coding-standards.md
+    - Contribuindo: guides/contributing.md
+    - Testes: guides/testing.md
+  - APIs:
+    - Visão Geral: apis/index.md
+    - API Gateway: apis/gateway.md
+    - MS Patients: apis/ms-patients.md
+    - MS Procedures: apis/ms-procedures.md
+    - MS Billing: apis/ms-billing.md
+    - MS Audit: apis/ms-audit.md
+    - RAG API: apis/rag-api.md
+    - Camunda API: apis/camunda-api.md
+  - Deployment:
+    - Visão Geral: deployment/overview.md
+    - Desenvolvimento: deployment/development.md
+    - Produção: deployment/production.md
+    - CI/CD: deployment/ci-cd.md
+  - Troubleshooting:
+    - Problemas Comuns: troubleshooting/common-issues.md
+    - Debugging: troubleshooting/debugging.md
+    - Performance: troubleshooting/performance.md
+  - Glossário: glossary.md
+
+
